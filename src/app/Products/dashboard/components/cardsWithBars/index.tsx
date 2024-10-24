@@ -110,12 +110,12 @@ export default function CardsWithBars() {
             opacity: 1,
         },
     }
-    // useEffect(() => {
-    //     if (document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
-    //         const chart = new ApexCharts(document.getElementById("column-chart"), options);
-    //         chart.render();
-    //     }
-    // }, [])
+    useEffect(() => {
+        if (document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
+            const chart = new ApexCharts(document.getElementById("column-chart"), options);
+            chart.render();
+        }
+    }, [])
 
 
 

@@ -1,7 +1,10 @@
-import CardsWithBars from "./components/cardsWithBars";
-import CardsWhithNumbers from "./components/cardWithNumber";
-import HistoricalShop from "./components/historical";
-import InfoUser from "./components/infoUser";
+"use client"
+import dynamic from 'next/dynamic';
+
+const InfoUser = dynamic(() => import('./components/infoUser'), { ssr: false });
+const CardsWithBars = dynamic(() => import('./components/cardsWithBars'), { ssr: false });
+const CardsWithNumbers = dynamic(() => import('./components/cardWithNumber'), { ssr: false });
+const HistoricalShop = dynamic(() => import('./components/historical'), { ssr: false });
 
 export default function HomeDashboard() {
   return (
@@ -9,7 +12,7 @@ export default function HomeDashboard() {
       <main className="w-full h-full gap-6 flex flex-col">
         <InfoUser />
         <CardsWithBars />
-        <CardsWhithNumbers />
+        <CardsWithNumbers />
         <HistoricalShop />
       </main>
     </div>

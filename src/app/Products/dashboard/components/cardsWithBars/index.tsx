@@ -111,9 +111,11 @@ export default function CardsWithBars() {
         },
     }
     useEffect(() => {
-        if (document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
-            const chart = new ApexCharts(document.getElementById("column-chart"), options);
-            chart.render();
+        if (typeof window !== 'undefined') {
+            if (document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
+                const chart = new ApexCharts(document.getElementById("column-chart"), options);
+                chart.render();
+            }
         }
     }, [])
 
